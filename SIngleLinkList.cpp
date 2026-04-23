@@ -28,6 +28,16 @@ public:
         Node *nodeBaru = new Node;
         nodeBaru->nomhs = nim;
 
+        if (START == NULL || nim <= START->nomhs)
+        {
+            if (START != NULL && nim == START->nomhs)
+            {
+                cout << "\nDuplikasi nomhs tidak diijinkan\n";
+                return;
+            }
 
+            nodeBaru->next = START;
+            START = nodeBaru;
+        }
     }
 };
